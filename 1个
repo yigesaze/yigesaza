@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+	</head>
+	<body>
+		<div class="box">
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+		</div>
+<style type="text/css">
+	.box{
+		width: 400px;
+		background: lightblue;
+		overflow: hidden;
+		margin: 0 auto;
+	}
+	li{
+		list-style: none;
+		width: 100px;
+		height: 100px;
+		float: left;
+		transition: all 0.3s;
+	}
+	li:nth-child(1){
+		background: #53CB43;
+	}
+	li:nth-child(2){
+		background: orange;
+	}
+	li:nth-child(3){
+		background: black;
+	}
+	li:nth-child(4){
+		background: green;
+	}
+</style>
+		<script>
+			var lis = document.getElementsByTagName('li');
+
+			for (var index = 0; index < lis.length; index++) {
+				lis[index].onmouseover=function(){
+					for(var i=0;i<lis.length;i++){
+						lis[i].style.width='50px'
+					}
+					this.style.width='250px'
+				}
+				
+				lis[index].onmouseout=function(){
+					for(var i=0; i<lis.length;i++){
+						lis[i].style.width='100px'
+					}
+				}
+			}
+			
+		</script>
+
+	</body>
+</html>
